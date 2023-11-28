@@ -1,0 +1,69 @@
+<template>
+    <!--DEVELOPER - VINICIUS RICARDO MARTINS
+    Email: martinsrvinicius@gmail.com
+    -->
+    <div class="background">
+        <div class="container">
+            <p>Welcome to RYD Lime Chiffon</p>
+            <p>Some long text: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                aliquip ex ea commodo consequat. </p>
+                <!--PRESS THE BUTTON TO GO TO COIN PROBLEM CODE-->
+            <button type="submit" class="button" @click="toggle"><span>Continue</span></button>
+        </div>
+    </div>
+</template>
+
+<script setup lang="ts">
+const emit = defineEmits(['toggle'])
+
+//TOGGLE BUTTON TO SWITCH THE COMPONENT CODE CHALLENGE
+function toggle() {
+    emit('toggle', true)
+}
+
+</script>
+
+<style scoped>
+/**Background-color added to the parent */
+.background {
+    background-color: #5ba68a;
+}
+
+/**Used display flex to facilitate the alignment of content on the screen */
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 50vh;
+}
+
+p {
+    max-width:450px;
+    margin: auto;
+    text-align: justify;
+    color: white;
+}
+
+button {
+    border-radius: 100%;
+   width: 100px;
+    height: 100px;
+    margin: auto;
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #d9c45b;
+    position: relative;
+    top:20vh;
+}
+/**Responsive button size e font-size */
+@media screen and (min-width:400px) {
+    button {
+        width: 130px;
+        height: 130px;
+        font-size: 1.4rem;
+    }
+}
+</style>
